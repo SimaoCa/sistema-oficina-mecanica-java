@@ -1,0 +1,15 @@
+@startuml
+interface IAcademia
+class Academia
+class Aluno
+class Instrutor
+class PlanoTreino
+class Exercicio
+
+Academia ..|> IAcademia
+Academia "1" o-- "0..*" Aluno
+Academia "1" o-- "0..*" Instrutor
+Aluno "0..*" -- "0..1" Instrutor
+Aluno "1" *-- "0..1" PlanoTreino
+PlanoTreino "1" *-- "0..*" Exercicio
+@enduml
